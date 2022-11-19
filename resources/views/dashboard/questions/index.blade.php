@@ -1,4 +1,4 @@
-@extends("layouts.admin")
+
 
 @push('_styles')
 

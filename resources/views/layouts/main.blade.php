@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Մարտին Էլիզբարյան | @stack('_title')</title>
+    <title>Student Helper | @stack('_title')</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="keywords" content="Martin, Elizbaryan, Մարտին Էլիզբարյան">
-    <meta name="description" content="Մարտին Էլիզբարյան | Վեբ Կայք | Դասեր | Հարցաշարեր">
-    <meta property="og:image" content="https://martinelizbaryan.am/img/logo_mini.png" />
+    <meta name="description" content="Վեբ Կայք | Դասեր | Հարցաշարեր">
+    <meta property="og:image" content="https://martinelizbaryan.am/img/logo_white_rem.png" />
 
-    <link rel="shortcut icon" type="image/png" href="/img/logo_mini_white.svg"/>
+    <link rel="shortcut icon" type="image/png" href="/img/logo_white_rem.png"/>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 

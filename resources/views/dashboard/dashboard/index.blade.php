@@ -1,4 +1,4 @@
-@extends("layouts.admin")
+
 
 @push('page_name','Dashboard')
 
@@ -35,7 +35,6 @@
 
             @include("globals.adv.js_lessons")
 
-            @include("globals.instagram_admin")
 
             <div>
                 <h2 class="mb-5">Թոփ 20 մասնակիցները</h2>

@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="/img/logo.png">
+    <link rel="icon" href="/img/logo_white_rem.png">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Մարտին Էլիզբարյան</title>
+    <title>Student Helper</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -56,7 +56,7 @@
 
                 <div class="d-flex flex-center mb-15">
                     <a href="#">
-                        <img src="/img/logo.png" width="100px" alt="Մարտին Էլիզբարյան">
+                        <img src="/img/logo_white_rem.png" width="100px" alt="student helper">
                     </a>
                 </div>
 

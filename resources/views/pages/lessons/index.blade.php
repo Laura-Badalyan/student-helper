@@ -13,7 +13,7 @@
 
         <h1 class="global_margin">Դասընթացներ</h1>
 
-        <h2 class="block_title">Մանուկների համար</h2>
+        <h2 class="block_title">Ծրագրավորման հիմունքներ</h2>
 
         <div class="lessons">
             @foreach($childLessons as $lesson)
@@ -25,7 +25,6 @@
 
                         <div class="lesson_name">{{$lesson['name']}}</div>
 
-                        <p>Տարիք։ {{$lesson['age']}}</p>
                         <p>Շաբաթական։ {{$lesson['week']}}</p>
                         <p>Տևողությունը։ {{$lesson['duration']}}</p>
 
@@ -39,9 +38,8 @@
 
         </div>
 
-        @include("globals.instagram")
 
-        <h2 class="block_title">Մեծահասակների համար</h2>
+        <h2 class="block_title">Խորացված ծրագրավորում</h2>
 
         <div class="lessons">
             @foreach($adultLessons as $lesson)
@@ -53,7 +51,6 @@
 
                         <div class="lesson_name">{{$lesson['name']}}</div>
 
-                        <p>Տարիք։ {{$lesson['age']}}</p>
                         <p>Շաբաթական։ {{$lesson['week']}}</p>
                         <p>Տևողությունը։ {{$lesson['duration']}}</p>
 

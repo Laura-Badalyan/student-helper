@@ -17,6 +17,19 @@ use App\Http\Controllers\Dashboard\YouTubeController as DashboardYoutube;
 use App\Http\Controllers\Dashboard\NewsController as DashboardNews;
 use App\Http\Controllers\Dashboard\DiscussionsController as DashboardDiscussions;
 
+use App\Http\Controllers\Admin\UsersController as AdminUsers;
+use App\Http\Controllers\Admin\GroupsController as AdminGroups;
+use App\Http\Controllers\Admin\CoursesController as AdminCourses;
+use App\Http\Controllers\Admin\MessagesController as AdminMessages;
+use App\Http\Controllers\Admin\QuestionsController as AdminQuestions;
+use App\Http\Controllers\Admin\FaqController as AdminFaqs;
+use App\Http\Controllers\Admin\TasksController as AdminTasks;
+use App\Http\Controllers\Admin\CommandsController as AdminCommands;
+use App\Http\Controllers\Admin\WebsitesController as AdminWebsites;
+use App\Http\Controllers\Admin\YoutubeController as AdminYoutube;
+use App\Http\Controllers\Admin\BlogsController as AdminBlogs;
+
+
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CoursesController;
@@ -190,143 +203,143 @@ Route::prefix("dashboard")->middleware(["auth"])->name("dashboard")->group(funct
 });
 
 
-//Route::prefix("admin")->middleware(["auth", "admin"])->name("admin")->group(function () {
-//
-//    Route::prefix("users")->name(".users")->group(function(){
-//
-//        Route::get('/', [AdminUsers::class, "index"])->name(".index");
-//
-//        Route::get('/create', [AdminUsers::class, "create"]);
-//        Route::post('/create', [AdminUsers::class, "store"]);
-//
-//        Route::get('/{id}', [AdminUsers::class, "edit"]);
-//        Route::post('/{id}', [AdminUsers::class, "update"]);
-//
-//        Route::post('/delete/{id}', [AdminUsers::class, "delete"]);
-//
-//        Route::post('/questions/reset', [AdminUsers::class, "questionReset"]);
-//
-//
-//
-//    });
-//
-//    Route::prefix("groups")->name(".groups")->group(function(){
-//
-//        Route::get('/', [AdminGroups::class, "index"])->name(".index");
-//
-//        Route::get('/create', [AdminGroups::class, "create"]);
-//        Route::post('/create', [AdminGroups::class, "store"]);
-//
-//        Route::get('/{id}', [AdminGroups::class, "edit"]);
-//        Route::post('/{id}', [AdminGroups::class, "update"]);
-//
-//        Route::post('/delete/{id}', [AdminGroups::class, "delete"]);
-//
-//    });
-//
-//    Route::prefix("courses")->name(".courses")->group(function(){
-//
-//        Route::get('/', [AdminCourses::class, "index"])->name(".index");
-//
-//        Route::get('/group/{id}', [AdminCourses::class, "group"]);
-//
-//        Route::get('/create', [AdminCourses::class, "create"]);
-//        Route::post('/create', [AdminCourses::class, "store"]);
-//
-//        Route::get('/{id}', [AdminCourses::class, "edit"]);
-//        Route::post('/{id}', [AdminCourses::class, "update"]);
-//
-//        Route::post('/delete/{id}', [AdminCourses::class, "delete"]);
-//
-//    });
-//
-//    Route::prefix("messages")->name(".messages")->group(function(){
-//
-//        Route::get("/", [AdminMessages::class, "index"])->name(".index");
-//
-//        Route::post("/delete/{id}", [AdminMessages::class, "delete"])->name(".delete");
-//
-//    });
-//
-//    Route::prefix("questions")->name(".questions")->group(function(){
-//
-//        Route::get("/", [AdminQuestions::class, "index"])->name(".index");
-//
-//        Route::get("/create", [AdminQuestions::class, "create"]);
-//        Route::post("/create", [AdminQuestions::class, "store"]);
-//
-//        Route::get("/edit/{id}", [AdminQuestions::class, "edit"]);
-//        Route::post("/edit/{id}", [AdminQuestions::class, "update"]);
-//
-//        Route::post("/delete/{id}", [AdminQuestions::class, "delete"]);
-//
-//    });
-//
-//    Route::prefix("faqs")->name(".faqs")->group(function(){
-//
-//        Route::get("/", [AdminFaqs::class, "index"])->name(".index");
-//
-//        Route::get("/create", [AdminFaqs::class, "create"]);
-//        Route::post("/create", [AdminFaqs::class, "store"]);
-//
-//        Route::get("/edit/{id}", [AdminFaqs::class, "edit"]);
-//        Route::post("/edit/{id}", [AdminFaqs::class, "update"]);
-//
-//        Route::post("/delete/{id}", [AdminFaqs::class, "delete"]);
-//
-//    });
-//
-//    Route::prefix("websites")->name(".websites")->group(function(){
-//
-//        Route::get("/", [AdminWebsites::class, "index"])->name(".index");
-//
-//        Route::get("/create", [AdminWebsites::class, "create"]);
-//        Route::post("/create", [AdminWebsites::class, "store"]);
-//
-//        Route::get("/edit/{id}", [AdminWebsites::class, "edit"]);
-//        Route::post("/edit/{id}", [AdminWebsites::class, "update"]);
-//
-//        Route::post("/delete/{id}", [AdminWebsites::class, "delete"]);
-//
-//    });
-//
-//    Route::prefix("tasks")->name(".tasks")->group(function(){
-//
-//        Route::get("/", [AdminTasks::class, "index"])->name(".index");
-//        Route::post("/", [AdminTasks::class, "update"]);
-//
-//    });
-//
-//    Route::prefix("commands")->name(".commands")->group(function(){
-//
-//        Route::get("/", [AdminCommands::class, "index"])->name(".index");
-//        Route::post("/migrate", [AdminCommands::class, "migrate"]);
-//        Route::post("/cache-clear", [AdminCommands::class, "cacheClear"]);
-//        Route::post("/view-clear", [AdminCommands::class, "viewClear"]);
-//        Route::post("/config-clear", [AdminCommands::class, "configClear"]);
-//        Route::post("/all-clear", [AdminCommands::class, "allClear"]);
-//
-//    });
-//
-//    Route::prefix("youtube")->name(".youtube")->group(function(){
-//
-//        Route::get("",[AdminYoutube::class, "index"])->name(".index");
-//        Route::get("/edit/{id}",[AdminYoutube::class, "edit"]);
-//
-//    });
-//
-//    Route::prefix("blogs")->name(".blogs")->group(function(){
-//
-//        Route::get("",[AdminBlogs::class, "index"])->name(".index");
-//        Route::get("/create",[AdminBlogs::class, "create"])->name(".create");
-//        Route::post("/create",[AdminBlogs::class, "store"])->name(".store");
-//        Route::get("/edit/{id}",[AdminBlogs::class, "edit"]);
-//        Route::post("/edit/{id}",[AdminBlogs::class, "update"]);
-//        Route::post("/hide/{id}",[AdminBlogs::class, "hide"]);
-//        Route::post("/show/{id}",[AdminBlogs::class, "show"]);
-//
-//    });
-//
-//});
+Route::prefix("admin")->middleware(["auth", "admin"])->name("admin")->group(function () {
+
+    Route::prefix("users")->name(".users")->group(function(){
+
+        Route::get('/', [AdminUsers::class, "index"])->name(".index");
+
+        Route::get('/create', [AdminUsers::class, "create"]);
+        Route::post('/create', [AdminUsers::class, "store"]);
+
+        Route::get('/{id}', [AdminUsers::class, "edit"]);
+        Route::post('/{id}', [AdminUsers::class, "update"]);
+
+        Route::post('/delete/{id}', [AdminUsers::class, "delete"]);
+
+        Route::post('/questions/reset', [AdminUsers::class, "questionReset"]);
+
+
+
+    });
+
+    Route::prefix("groups")->name(".groups")->group(function(){
+
+        Route::get('/', [AdminGroups::class, "index"])->name(".index");
+
+        Route::get('/create', [AdminGroups::class, "create"]);
+        Route::post('/create', [AdminGroups::class, "store"]);
+
+        Route::get('/{id}', [AdminGroups::class, "edit"]);
+        Route::post('/{id}', [AdminGroups::class, "update"]);
+
+        Route::post('/delete/{id}', [AdminGroups::class, "delete"]);
+
+    });
+
+    Route::prefix("courses")->name(".courses")->group(function(){
+
+        Route::get('/', [AdminCourses::class, "index"])->name(".index");
+
+        Route::get('/group/{id}', [AdminCourses::class, "group"]);
+
+        Route::get('/create', [AdminCourses::class, "create"]);
+        Route::post('/create', [AdminCourses::class, "store"]);
+
+        Route::get('/{id}', [AdminCourses::class, "edit"]);
+        Route::post('/{id}', [AdminCourses::class, "update"]);
+
+        Route::post('/delete/{id}', [AdminCourses::class, "delete"]);
+
+    });
+
+    Route::prefix("messages")->name(".messages")->group(function(){
+
+        Route::get("/", [AdminMessages::class, "index"])->name(".index");
+
+        Route::post("/delete/{id}", [AdminMessages::class, "delete"])->name(".delete");
+
+    });
+
+    Route::prefix("questions")->name(".questions")->group(function(){
+
+        Route::get("/", [AdminQuestions::class, "index"])->name(".index");
+
+        Route::get("/create", [AdminQuestions::class, "create"]);
+        Route::post("/create", [AdminQuestions::class, "store"]);
+
+        Route::get("/edit/{id}", [AdminQuestions::class, "edit"]);
+        Route::post("/edit/{id}", [AdminQuestions::class, "update"]);
+
+        Route::post("/delete/{id}", [AdminQuestions::class, "delete"]);
+
+    });
+
+    Route::prefix("faqs")->name(".faqs")->group(function(){
+
+        Route::get("/", [AdminFaqs::class, "index"])->name(".index");
+
+        Route::get("/create", [AdminFaqs::class, "create"]);
+        Route::post("/create", [AdminFaqs::class, "store"]);
+
+        Route::get("/edit/{id}", [AdminFaqs::class, "edit"]);
+        Route::post("/edit/{id}", [AdminFaqs::class, "update"]);
+
+        Route::post("/delete/{id}", [AdminFaqs::class, "delete"]);
+
+    });
+
+    Route::prefix("websites")->name(".websites")->group(function(){
+
+        Route::get("/", [AdminWebsites::class, "index"])->name(".index");
+
+        Route::get("/create", [AdminWebsites::class, "create"]);
+        Route::post("/create", [AdminWebsites::class, "store"]);
+
+        Route::get("/edit/{id}", [AdminWebsites::class, "edit"]);
+        Route::post("/edit/{id}", [AdminWebsites::class, "update"]);
+
+        Route::post("/delete/{id}", [AdminWebsites::class, "delete"]);
+
+    });
+
+    Route::prefix("tasks")->name(".tasks")->group(function(){
+
+        Route::get("/", [AdminTasks::class, "index"])->name(".index");
+        Route::post("/", [AdminTasks::class, "update"]);
+
+    });
+
+    Route::prefix("commands")->name(".commands")->group(function(){
+
+        Route::get("/", [AdminCommands::class, "index"])->name(".index");
+        Route::post("/migrate", [AdminCommands::class, "migrate"]);
+        Route::post("/cache-clear", [AdminCommands::class, "cacheClear"]);
+        Route::post("/view-clear", [AdminCommands::class, "viewClear"]);
+        Route::post("/config-clear", [AdminCommands::class, "configClear"]);
+        Route::post("/all-clear", [AdminCommands::class, "allClear"]);
+
+    });
+
+    Route::prefix("youtube")->name(".youtube")->group(function(){
+
+        Route::get("",[AdminYoutube::class, "index"])->name(".index");
+        Route::get("/edit/{id}",[AdminYoutube::class, "edit"]);
+
+    });
+
+    Route::prefix("blogs")->name(".blogs")->group(function(){
+
+        Route::get("",[AdminBlogs::class, "index"])->name(".index");
+        Route::get("/create",[AdminBlogs::class, "create"])->name(".create");
+        Route::post("/create",[AdminBlogs::class, "store"])->name(".store");
+        Route::get("/edit/{id}",[AdminBlogs::class, "edit"]);
+        Route::post("/edit/{id}",[AdminBlogs::class, "update"]);
+        Route::post("/hide/{id}",[AdminBlogs::class, "hide"]);
+        Route::post("/show/{id}",[AdminBlogs::class, "show"]);
+
+    });
+
+});
 
 

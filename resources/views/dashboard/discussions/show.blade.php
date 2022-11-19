@@ -1,4 +1,4 @@
-@extends("layouts.admin")
+
 
 @push('page_name','Dashboard')
 
@@ -57,11 +57,8 @@
                                     <div class="d-flex justify-content-end">
                                         <div>
                                             <p class="mb-0">
-                                                @if($message->user->is_admin)
-                                                    {!!  $message->message !!}
-                                                @else
+
                                                     {{$message->message}}
-                                                @endif
                                             </p>
                                             <p class="text-muted">{{$message->created_at}}</p>
                                         </div>
@@ -86,11 +83,8 @@
                                         <div>
                                             <p class="label label-lg label-inline label-light-primary mb-1">{{$message->user->fullname}}</p>
                                             <p class="mb-0">
-                                                @if($message->user->is_admin)
-                                                    {!!  $message->message !!}
-                                                @else
+
                                                     {{$message->message}}
-                                                @endif
                                             </p>
                                             <p class="text-muted">{{$message->created_at}}</p>
                                         </div>

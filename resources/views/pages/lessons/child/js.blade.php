@@ -59,7 +59,6 @@
 
     </section>
 
-    @include("pages.lessons._partials.price_list_child")
 
 
 

@@ -31,6 +31,7 @@ class User extends Authenticatable
         'email',
         'password',
         'img',
+        'is_admin',
         'questions_times',
         'questions_times_today',
         'questions_corrects',

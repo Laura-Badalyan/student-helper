@@ -21,7 +21,6 @@
 
                 <div class="blog_description">{!! $blog->description !!}</div>
 
-                <p><b>Հեղինակ։</b> {{$blog->author}}</p>
                 <p class="global_margin"><b>Հրապարակվել է։</b> {{$blog->date}}</p>
             </div>
 

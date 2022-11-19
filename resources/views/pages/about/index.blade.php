@@ -15,13 +15,6 @@
 
             @include("pages.about._partials.me")
 
-            @include("globals.instagram")
-
-{{--            @include("pages.about._partials.social_pages")--}}
-
-            @include("pages.about._partials.languages")
-
-            @include("pages.about._partials.preferences")
 
         </div>
 

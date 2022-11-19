@@ -1,4 +1,4 @@
-@extends("layouts.admin")
+
 
 @push('_styles')
     {{-- <link rel="stylesheet" href="{{asset('css/front/about/index.css')}}"> --}}

@@ -433,7 +433,7 @@ header nav{
     margin-right: 35px;
 }
 .logo, .logo a{
-    height: 30px;
+    height: 57px;
 }
 .logo a img {
     height: 100%;
@@ -445,7 +445,7 @@ header nav{
 }
 .close-menu{
     text-align: right;
-    color: var(--red);
+    color: var(--gray);
     margin-bottom: 20px;
     display: none;
     cursor: pointer;

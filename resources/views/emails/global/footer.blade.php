@@ -4,4 +4,4 @@
 @include("emails._partials.br")
 
 
-@include("emails._partials.fullText", ['text' => "Հարգանքով՝ <br> Մարտին Էլիզբարյան։"])
+@include("emails._partials.fullText", ['text' => "Հարգանքով՝ <br> student helper"])

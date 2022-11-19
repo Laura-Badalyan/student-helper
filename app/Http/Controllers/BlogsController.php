@@ -26,6 +26,12 @@ class BlogsController extends Controller
     {
         $blog = Blog::where("is_active", 1)->find($id);
         if(!$blog){
+
+            if(Auth::isAdmin()){
+                $blog = Blog::find($id);
+                return $this->view('show', compact("blog"));
+            }
+
             return redirect("/blogs");
         }
 

@@ -13,8 +13,6 @@
         <div class="global_margin"></div>
         <div class="page_content">
 
-            <h1 class="block_title fz4 global_margin">Կարծիքներ</h1>
-
             <div class="opinions flex">
 
                 <div class="opinion">

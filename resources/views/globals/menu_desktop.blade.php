@@ -4,7 +4,7 @@
 
             <div class="logo">
                 <a href="/">
-                    <img src="/img/logo_white.svg" alt="">
+                    <img src="/img/logo_white_rem.png" alt="">
                 </a>
             </div>
 
@@ -27,11 +27,8 @@
                     <li class="{{ Request::route()->getName() == 'blogs' ? 'active' : '' }}">
                         <a href="/blogs">Բլոգ</a>
                     </li>
-                    <li class="{{ Request::route()->getName() == 'opinions' ? 'active' : '' }}">
-                        <a href="/opinions">Կարծիքներ</a>
-                    </li>
                     <li class="{{ Request::route()->getName() == 'about' ? 'active' : '' }}">
-                        <a href="/about">Իմ Մասին</a>
+                        <a href="/about">Մեր Մասին</a>
                     </li>
                     <li class="{{ Request::route()->getName() == 'contact' ? 'active' : '' }}">
                         <a href="/contact">Կապ</a>
